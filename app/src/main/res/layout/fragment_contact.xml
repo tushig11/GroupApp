@@ -16,7 +16,7 @@
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Address"
+            android:text="Address: "
             android:layout_weight="0.7"/>
         <TextView
             android:id="@+id/address"
@@ -24,7 +24,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:tooltipText="address"
-            android:text="3504 North hamlin avenue, Chicago, IL"
             android:layout_weight="0.3"/>
     </LinearLayout>
     <LinearLayout
@@ -36,7 +35,7 @@
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone"
+            android:text="Phone: "
             android:layout_weight="0.7"/>
         <TextView
             android:textSize="20sp"
@@ -44,7 +43,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:tooltipText="Phone"
-            android:text="571-232-4638"
             android:layout_weight="0.3"/>
     </LinearLayout>
     <LinearLayout
@@ -63,8 +61,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:tooltipText="Email"
-            android:text="batjargal@gmail.com"
+            android:tooltipText="Email: "
             android:layout_weight="0.3"/>
     </LinearLayout>
     <LinearLayout
