@@ -32,13 +32,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Toast.makeText(applicationContext, item.title.toString(), Toast.LENGTH_SHORT).show()
+        var selectedTab: Int? = null
         when(item.itemId){
-            R.id.main_home -> tabs.getTabAt(0)?.select();
-            R.id.main_about -> tabs.getTabAt(1)?.select();
-            R.id.main_work -> tabs.getTabAt(2)?.select();
-            R.id.main_contact -> tabs.getTabAt(3)?.select();
+            R.id.main_home -> selectedTab = 0
+            R.id.main_about -> selectedTab = 1
+            R.id.main_work -> selectedTab = 2
+            R.id.main_contact -> selectedTab = 3
+            else -> Toast.makeText(applicationContext, item.title.toString(), Toast.LENGTH_SHORT).show()
         }
+        if(selectedTab != null) tabs.getTabAt(selectedTab)?.select()
         return super.onOptionsItemSelected(item)
     }
 }
