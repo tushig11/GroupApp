@@ -8,7 +8,7 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/main_about"
-        android:icon="@drawable/about"
+        android:icon="@drawable/profile"
         android:title="@string/main_about"
         app:showAsAction="ifRoom" />
     <item
