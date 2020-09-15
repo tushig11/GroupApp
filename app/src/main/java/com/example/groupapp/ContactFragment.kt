@@ -27,7 +27,7 @@ class ContactFragment : Fragment() {
     }
 
     private fun phoneHandler(number: String) {
-        val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number))
+        val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number))
         startActivity(intent)
     }
 
@@ -50,6 +50,7 @@ class ContactFragment : Fragment() {
                 email.text = contact.email
                 facebook.setOnClickListener { webHandler("https://www.facebook.com/${contact.facebook}") }
                 twitter.setOnClickListener { webHandler("https://www.twitter.com/${contact.twitter}") }
+                phone.setOnClickListener { phoneHandler(contact.phone) }
             }
         }
 
