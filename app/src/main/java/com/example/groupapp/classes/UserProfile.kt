@@ -6,10 +6,22 @@ data class UserProfile(var firstName: String, var lastName: String): Serializabl
     var skills: ArrayList<String> = ArrayList<String>()
     var image: String? = null
     var totalXP: Int? = null
+    var aboutMe: String? = null
+
+    var educations: ArrayList<Education>? = null
+    var interests: ArrayList<String>? = null
+    var works: ArrayList<Work>?= null
+    var projects: ArrayList<Project>?= null
+
     constructor(firstName: String, lastName: String, image: String, skills:ArrayList<String>, totalXP: Int):this(firstName,lastName){
         this.skills = skills
         this.image = image
         this.totalXP = totalXP
+
+        this.educations = ArrayList<Education>()
+        this.interests = ArrayList<String>()
+        this.works = ArrayList<Work>()
+        this.projects = ArrayList<Project>()
     }
 
     fun addSkill(newSkill: String){

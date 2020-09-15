@@ -16,4 +16,11 @@
 <!--    home-->
     <string name="skills">Skill set</string>
     <string name="skillHint">Enter your new skill name</string>
+
+    <!--    about-->
+    <string name="about_education">Education</string>
+    <string name="about_interest">Interest</string>
+    <!--    work-->
+    <string name="work_experience">Professional Experience</string>
+    <string name="work_project">Projects</string>
 </resources>

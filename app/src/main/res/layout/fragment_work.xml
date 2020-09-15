@@ -5,10 +5,45 @@
     android:layout_height="match_parent"
     tools:context=".WorkFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/main_work" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/work_experience"
+            style="@style/Titles"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/worksView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/work_project"
+            style="@style/Titles"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/projectsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/projectText"
+            android:text="@string/work_project"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/colorGrey" /-->
+
+    </LinearLayout>
 
 </FrameLayout>
