@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:id="@+id/card_view"
+    app:cardBackgroundColor="#503987"
+    app:cardCornerRadius="20dp"
+    android:layout_marginBottom="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skills"
+            android:textColor="#8FFF70"
+            android:textSize="18sp"
+            style="@style/cardItemStyle"/>
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skills"
+            android:textColor="#F68000"
+            android:padding="15dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_gravity="end"
+            android:gravity="end"
+            style="@style/cardItemStyle" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

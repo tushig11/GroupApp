@@ -8,6 +8,8 @@ import android.view.MenuItem
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.annotation.RequiresApi
+import com.example.groupapp.classes.UserProfile
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         toolbar.setTitleTextColor(getColor(R.color.white))
         setSupportActionBar(toolbar)
 
+        createTestUser("Bat", "Bold", arrayListOf("Java", "JavaScript", "Python"), "about")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -45,5 +48,18 @@ class MainActivity : AppCompatActivity() {
         }
         if(selectedTab != null) tabs.getTabAt(selectedTab)?.select()
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun createTestUser(fname:String, lname:String, skills: ArrayList<String>, image: String){
+        var testUser = UserProfile(fname, lname, image, skills, 6)
+        val gson = Gson()
+        if( testUser != null){
+            val userObject = gson.toJson(testUser)
+            val spf = getSharedPreferences("user", 0)
+            val edit = spf.edit()
+            edit.putString("data", userObject)
+            edit.apply()
+        }
+
     }
 }
