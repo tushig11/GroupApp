@@ -35,18 +35,23 @@ class ContactFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = inflater.inflate(R.layout.fragment_contact, container, false)
-        val gson = Gson()
-        val spf = inflater.context.getSharedPreferences("contact", 0)
-        val response = spf.getString("data", "")
-        val testUser = gson.fromJson(response, Contact::class.java)
-        if( testUser != null) {
-            binding.address.text = testUser.address
-            binding.phone.text = testUser.phone
-            binding.email.text = testUser.email
-            binding.facebook.setOnClickListener { webHandler("https://www.facebook.com/${testUser.facebook}") }
-            binding.twitter.setOnClickListener { webHandler("https://www.twitter.com/${testUser.twitter}") }
-        }
         return inflater.inflate(R.layout.fragment_contact, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        activity?.let{
+            val spf = activity?.getSharedPreferences("contact", 0)
+            val response = spf?.getString("contactUser", "") ?: ""
+            if( response.isNotEmpty()) {
+                val contact = Gson().fromJson(response, Contact::class.java)
+                address.text = contact.address
+                phone.text = contact.phone
+                email.text = contact.email
+                facebook.setOnClickListener { webHandler("https://www.facebook.com/${contact.facebook}") }
+                twitter.setOnClickListener { webHandler("https://www.twitter.com/${contact.twitter}") }
+            }
+        }
+
     }
 }
