@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.annotation.RequiresApi
+import com.example.groupapp.classes.Contact
 import com.example.groupapp.classes.UserProfile
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         createTestUser("Bat", "Bold", arrayListOf("Java", "JavaScript", "Python"), "about")
+        createContact("3504 North Hamlin avenue Chicago, IL", "571-232-4638","nbjargal@gmail.com", "n.batjargal", "kobebryant" )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,6 +62,16 @@ class MainActivity : AppCompatActivity() {
             edit.putString("data", userObject)
             edit.apply()
         }
-
+    }
+    private fun createContact(address:String, phone: String, email:String, facebook:String, twitter:String) {
+        var contact = Contact(address, phone, email, facebook, twitter)
+        val gson = Gson()
+        if(contact != null) {
+            val contactObj = gson.toJson(contact)
+            val sp = getSharedPreferences("contact", 0)
+            val edit = sp.edit()
+            edit.putString("contactUser", contactObj)
+            edit.apply()
+        }
     }
 }
