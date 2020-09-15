@@ -9,7 +9,7 @@ data class UserProfile(var firstName: String, var lastName: String): Serializabl
     constructor(firstName: String, lastName: String, image: String, skills:ArrayList<String>, totalXP: Int):this(firstName,lastName){
         this.skills = skills
         this.image = image
-        this.totalXP == totalXP
+        this.totalXP = totalXP
     }
 
     fun addSkill(newSkill: String){

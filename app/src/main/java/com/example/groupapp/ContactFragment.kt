@@ -30,7 +30,7 @@ class ContactFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         address.text = "3504 North hamlin avenue, Chicago, IL"
         phone.text = "571-232-4638"
-        email.text = "batjargal@gmail.com"
+        email.text = "batjargal@gmail.cccom"
         facebook.setOnClickListener {
             webHandler("https://www.facebook.com/n.batjargal")
         }

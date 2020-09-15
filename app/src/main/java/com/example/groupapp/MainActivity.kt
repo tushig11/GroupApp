@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun createTestUser(fname:String, lname:String, skills: ArrayList<String>, image: String){
         var testUser = UserProfile(fname, lname, image, skills, 6)
+
         val gson = Gson()
         if( testUser != null){
             val userObject = gson.toJson(testUser)
