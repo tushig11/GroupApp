@@ -16,6 +16,7 @@
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
             android:text="Address: "
             android:layout_weight="0.7"/>
         <TextView
@@ -35,6 +36,7 @@
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
             android:text="Phone: "
             android:layout_weight="0.7"/>
         <TextView
@@ -55,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
+            android:textColor="@color/colorPrimary"
             android:layout_weight="0.7"/>
         <TextView
             android:textSize="20sp"
