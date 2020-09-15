@@ -1,19 +1,26 @@
 package com.example.groupapp
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.groupapp.classes.Education
-import com.example.groupapp.classes.Work
+import java.time.format.DateTimeFormatter
 
 class EducationAdapter(var educations: ArrayList<Education>?) : RecyclerView.Adapter<EducationAdapter.MyViewHolder>(){
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.major.text = educations!![position].degree.toString() + " of " + educations!![position]?.major.toString()
         holder.school.text = educations!![position].schoolName.toString()
-        holder.date.text = educations!![position].startDate.toString() + " - " + educations!![position].endDate.toString()
+
+        var formatter = DateTimeFormatter.ofPattern("MMM yyyy")
+
+        holder.date.text = educations!![position].startDate?.format(formatter) +" - " +
+                educations!![position].endDate?.format(formatter)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

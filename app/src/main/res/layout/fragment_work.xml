@@ -13,17 +13,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="15dp"
             android:text="@string/work_experience"
             style="@style/Titles"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/worksView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp"/>
+            android:layout_height="wrap_content"
+            android:padding="15dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -34,15 +32,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/projectsView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <!--TextView
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/projectText"
-            android:text="@string/work_project"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:textColor="@color/colorGrey" /-->
+            android:padding="15dp"
+            android:text="@string/work_project"/>
 
     </LinearLayout>
 

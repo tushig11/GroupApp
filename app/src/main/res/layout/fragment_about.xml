@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="@string/main_about"
             style="@style/Titles"/>
 
@@ -35,16 +35,11 @@
             android:layout_marginBottom="15dp"
             android:background="@android:color/darker_gray" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp"/>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/about_education"
             style="@style/Titles"/>
-
 
         <Space
             android:layout_width="match_parent"
@@ -61,10 +56,6 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@android:color/darker_gray" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp"/>
 
         <TextView
             style="@style/Titles"
