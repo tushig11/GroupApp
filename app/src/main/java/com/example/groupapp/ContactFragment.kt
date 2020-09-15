@@ -49,17 +49,4 @@ class ContactFragment : Fragment() {
         }
         return inflater.inflate(R.layout.fragment_contact, container, false)
     }
-    
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        address.text = "3504 North hamlin avenue, Chicago, IL"
-        phone.text = "571-232-4638"
-        email.text = "batjargal@gmail.cccom"
-        facebook.setOnClickListener {
-            webHandler("https://www.facebook.com/n.batjargal")
-        }
-        twitter.setOnClickListener {
-            webHandler("https://www.twitter.com")
-        }
-    }
 }
