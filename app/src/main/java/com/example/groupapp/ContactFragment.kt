@@ -41,10 +41,18 @@ class ContactFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.let{
-            val spf = activity?.getSharedPreferences("contact", 0)
-            val response = spf?.getString("contactUser", "") ?: ""
+
+
+//            val gson = Gson()
+//            val spf = inflater.context.getSharedPreferences("user", 0)
+//            val response = spf.getString("data", "")
+//            val testUser = gson.fromJson(response, UserProfile::class.java)
+
+            val spf = activity?.getSharedPreferences("user", 0)
+            val response = spf?.getString("data", "") ?: ""
             if( response.isNotEmpty()) {
-                val contact = Gson().fromJson(response, Contact::class.java)
+                val user = Gson().fromJson(response, UserProfile::class.java)
+                val contact = user.contact
                 address.text = contact.address
                 phone.text = contact.phone
                 email.text = contact.email

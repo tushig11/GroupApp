@@ -38,13 +38,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         createTestUser("Bat", "Bold", arrayListOf("Java", "JavaScript", "Python"), "about")
-        createContact(
-            "3504 North Hamlin avenue Chicago, IL",
-            "571-232-4638",
-            "nbjargal@gmail.com",
-            "n.batjargal",
-            "kobebryant"
-        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -73,7 +66,16 @@ class MainActivity : AppCompatActivity() {
         skills: ArrayList<String>,
         image: String
     ) {
-        var testUser = UserProfile(fname, lname, image, skills, 6)
+        var contact = Contact("3504 North Hamlin avenue Chicago, IL",
+            "571-232-4638",
+            "nbjargal@gmail.com",
+            "n.batjargal",
+            "kobebryant")
+
+        var testUser = UserProfile(fname, lname, image, skills, 6, contact)
+
+
+        testUser.contact = contact
 
         var bachelor = Education(1, "NUM", LocalDate.of(2014, 9, 1), LocalDate.of(2018, 5, 30), "Bachelor", "Computer Science")
         var master = Education(2, "MUM", LocalDate.of(2019, 2, 4), LocalDate.of(2021, 6, 30), "Master", "Computer Science")
@@ -106,19 +108,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun createContact(
-        address: String,
-        phone: String,
-        email: String,
-        facebook: String,
-        twitter: String
-    ) {
-        var contact = Contact(address, phone, email, facebook, twitter)
-        val gson = Gson()
-        val contactObj = gson.toJson(contact)
-        val sp = getSharedPreferences("contact", 0)
-        val edit = sp.edit()
-        edit.putString("contactUser", contactObj)
-        edit.apply()
-    }
 }
